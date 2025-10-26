@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profiles</title>
+</head>
+<body>
+    <h1>User Profiles</h1>
+    <div id="user-container"></div>
+
+    <script>
+        fetch('user.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to load user data');
+                }
+                return response.json(); 
+            })
+            .then(users => {
+                const container = document.getElementById('user-container');
+                
+                users.forEach(user => {
+                    const userCard = document.createElement('div');
+                    userCard.className = 'user-card';
+
+                    userCard.innerHTML = `
+                        <h2>${user.firstName} ${user.lastName}</h2>
+                        <p><strong>Email:</strong> ${user.email}</p>
+                        <p><strong>Date of Birth:</strong> ${user.dateOfBirth}</p>
+                        
+                        <div class="section-title">Address:</div>
+                        <p>
+                            ${user.address.street}<br>
+                            ${user.address.city}, ${user.address.state} ${user.address.zipCode}
+                        </p>
+                        
+                        <div class="section-title">Preferences:</div>
+                        <p>
+                            Theme: ${user.preferences.theme}<br>
+                            Language: ${user.preferences.language}<br>
+                            Notifications: ${user.preferences.notifications ? 'Enabled' : 'Disabled'}<br>
+                            Newsletter Subscribed: ${user.preferences.subscription ? 'Yes' : 'No'}
+                        </p>
+                    `;
+
+                    container.appendChild(userCard);
+                });
+            })
+            .catch(error => {
+                document.getElementById('user-container').innerHTML = 
+                    `<p style="color: red;">Error loading user data: ${error.message}</p>`;
+            });
+    </script>
+</body>
+</html>
