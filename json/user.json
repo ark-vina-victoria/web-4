@@ -1,0 +1,56 @@
+[
+  {
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "email": "emily.davis@example.com",
+    "dateOfBirth": "1990-03-15",
+    "address": {
+      "street": "456 Oak Avenue",
+      "city": "Portland",
+      "state": "Oregon",
+      "zipCode": "97201"
+    },
+    "preferences": {
+      "theme": "dark",
+      "language": "English",
+      "notifications": true,
+      "subscription": true
+    }
+  },
+  {
+    "firstName": "Miguel",
+    "lastName": "García",
+    "email": "miguel.g@example.com",
+    "dateOfBirth": "1985-07-22",
+    "address": {
+      "street": "789 Pine Road",
+      "city": "Miami",
+      "state": "Florida",
+      "zipCode": "33101"
+    },
+    "preferences": {
+      "theme": "light",
+      "language": "Spanish",
+      "notifications": false,
+      "subscription": true
+    }
+  },
+  {
+    "firstName": "Yuki",
+    "lastName": "Tanaka",
+    "email": "yuki.t@example.com",
+    "dateOfBirth": "1998-11-05",
+    "address": {
+      "street": "123 Maple Lane",
+      "city": "Seattle",
+      "state": "Washington",
+      "zipCode": "98101"
+    },
+    "preferences": {
+      "theme": "dark",
+      "language": "Japanese",
+      "notifications": true,
+      "subscription": false
+    }
+  }
+]
